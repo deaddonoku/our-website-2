@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
     <link rel='stylesheet' id='elementor-frontend-css' href='https://sociothrive.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.13.4' media='all' />
     <link rel='stylesheet' id='elementor-post-13-css' href='https://sociothrive.com/wp-content/uploads/elementor/css/post-13.css?ver=1668076057' media='all' />
-    
+    <script src="http://sibeeshpassion.com/content/scripts/jquery-1.11.1.min.js"></script> 
     
     <style>
       .social-icons {
@@ -40,14 +40,86 @@
           margin: -100 5px ;
       }
   </style>
-  <style>
-    /* CSS for mobile devices */
-    @media only screen and (max-width: 600px) {
-      .left-image img[src="assets/images/about-left-image.png"] {
-        display: none; /* Hide the image on mobile devices */
+      <script>
+        // Disable right-click and show message
+        window.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            var messageContainer = document.createElement('div');
+            messageContainer.style.position = 'fixed';
+            messageContainer.style.top = '0';
+            messageContainer.style.left = '0';
+            messageContainer.style.width = '100%';
+            messageContainer.style.height = '100%';
+            messageContainer.style.display = 'flex';
+            messageContainer.style.justifyContent = 'center';
+            messageContainer.style.alignItems = 'flex-start';
+            messageContainer.style.pointerEvents = 'none';
+            messageContainer.style.zIndex = '9999';
+            var message = document.createElement('div');
+            message.style.background = '#fff';
+            message.style.padding = '20px';
+            message.style.fontSize = '20px';
+            message.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            message.style.opacity = '1';
+            message.style.transition = 'opacity 0.3s';
+            message.innerText = 'Access Denied';
+            messageContainer.appendChild(message);
+            document.body.appendChild(messageContainer);
+
+            // Remove message when clicking anywhere else on the document
+            window.addEventListener('mousedown', function (event) {
+                if (!messageContainer.contains(event.target)) {
+                    messageContainer.remove();
+                }
+            });
+        });
+    </script>
+    
+    <script>
+      document.onkeypress = function(event) {
+        event = event || window.event;
+        if (event.keyCode === 123) {
+          showMessage("Access Denied");
+          return false;
+        }
+      };
+    
+      document.onmousedown = function(event) {
+        event = event || window.event;
+        if (event.button === 2) {
+          showMessage("Access Denied");
+          return false;
+        }
+      };
+    
+      document.onkeydown = function(event) {
+        event = event || window.event;
+        if (event.keyCode === 123) {
+          showMessage("Access Denied");
+          return false;
+        }
+      };
+    
+      function showMessage(message) {
+        var messageBox = document.createElement("div");
+        messageBox.style.position = "fixed";
+        messageBox.style.top = "50%";
+        messageBox.style.left = "50%";
+        messageBox.style.transform = "translate(-50%, -50%)";
+        messageBox.style.background = "#fff";
+        messageBox.style.padding = "20px";
+        messageBox.style.fontSize = "20px";
+        messageBox.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
+        messageBox.innerText = message;
+        document.body.appendChild(messageBox);
+    
+        // Remove message after 2 seconds
+        setTimeout(function() {
+          messageBox.remove();
+        }, 2000);
       }
-    }
-  </style>
+    </script>
+    
   </head>
 <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
@@ -57,7 +129,14 @@
 </script>
 <noscript><a href="https://www.livechat.com/chat-with/15532710/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
 <!-- End of LiveChat code -->
-
+<style>
+  /* CSS for mobile devices */
+  @media only screen and (max-width: 600px) {
+    .left-image img[src="assets/images/about-left-image.png"] {
+      display: none; /* Hide the image on mobile devices */
+    }
+  }
+</style>
 <body>
 
   <!-- ***** Preloader Start ***** -->
