@@ -392,44 +392,50 @@
             }
         }
       </style>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var videos = document.querySelectorAll(".video-mockup video");
-    
-            videos.forEach(function (video) {
-                video.setAttribute("autoplay", true);
-                video.setAttribute("muted", true);
-    
-                video.addEventListener("play", function () {
-                    if (!video.paused) {
-                        video.muted = false; // Unmute when the user plays the video
-                    }
-                });
-            });
-        });
-    </script>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          var videos = document.querySelectorAll(".video-mockup video");
+  
+          videos.forEach(function (video) {
+              video.setAttribute("autoplay", true);
+              video.setAttribute("muted", true);
+              video.setAttribute("loop", true);
+  
+              var soundButton = document.createElement("button");
+              soundButton.classList.add("sound-button");
+              soundButton.innerHTML = "🔊";
+  
+              soundButton.addEventListener("click", function () {
+                  video.muted = !video.muted;
+                  soundButton.innerHTML = video.muted ? "🔊" : "🔈";
+              });
+  
+              video.parentElement.appendChild(soundButton);
+          });
+      });
+  </script>
       
       <div class="video-container">
         <div class="video-mockup">
-            <video controls>
+          <video  autoplay muted loop>
                 <source src="assets/video/Jaxxon Tipped_ Best advice .mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="video-mockup">
-            <video controls>
+          <video autoplay muted loop>
                 <source src="assets/video/Coaching artist and Executives.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="video-mockup">
-            <video controls>
+          <video  autoplay muted loop>
                 <source src="assets/video/imposter syndrome.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="video-mockup">
-            <video controls>
+          <video  autoplay muted loop>
                 <source src="assets/video/dont make goals.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
