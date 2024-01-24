@@ -392,6 +392,22 @@
             }
         }
       </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var videos = document.querySelectorAll(".video-mockup video");
+    
+            videos.forEach(function (video) {
+                video.setAttribute("autoplay", true);
+                video.setAttribute("muted", true);
+    
+                video.addEventListener("play", function () {
+                    if (!video.paused) {
+                        video.muted = false; // Unmute when the user plays the video
+                    }
+                });
+            });
+        });
+    </script>
       
       <div class="video-container">
         <div class="video-mockup">
