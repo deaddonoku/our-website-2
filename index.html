@@ -471,15 +471,15 @@
 <style>
 .offers-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-around; /* Adjust as needed */
   flex-wrap: wrap;
 }
 
 .offer-box {
-  width: 100%;
-  max-width: 400px;
+  flex: 1;
+  max-width: 450px;
   margin: 12px;
-  padding: 2px;
+  padding: 20px;
   box-sizing: border-box;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
               0 -8px 8px rgba(0, 0, 0, 0.1),
@@ -487,12 +487,20 @@
               -8px 0 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
-</style> 
+
+/* Optional: Add media queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .offers-section {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+</style>
 <section class="offers-section">
   
  
   
-  <div style="width: 400px; height: 700px; background-color: #f0f0f0; margin: 10px; padding: 20px; box-sizing: border-box; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+  <div class="offer-box"  style="width: 480px; height: 700px; background-color: #f0f0f0; margin: 10px; padding: 20px; box-sizing: border-box; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
   0 -8px 8px rgba(0, 0, 0, 0.1),
   8px 0 8px rgba(0, 0, 0, 0.1),
   -8px 0 8px rgba(0, 0, 0, 0.1); border-radius: 15px;">
@@ -518,7 +526,7 @@
                   
   </div>
   
-  <div style="width:400px; height: 700px; background-color: #e0e0e0; margin: -12px; padding: 20px; box-sizing: border-box; display: inline-block;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+  <div class="offer-box" style="width:480px; height: 700px; background-color: #e0e0e0; margin: -12px; padding: 20px; box-sizing: border-box; display: inline-block;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
   0 -8px 8px rgba(0, 0, 0, 0.1),
   8px 0 8px rgba(0, 0, 0, 0.1),
   -8px 0 8px rgba(0, 0, 0, 0.1); border-radius: 15px;">
@@ -544,7 +552,7 @@
       
   </div>
   
-  <div style="width: 400px; height: 700px; background-color: #d0d0d0; margin: 12px; padding: 20px; box-sizing: border-box; display: inline-block;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+  <div class="offer-box" style="width: 480px; height: 700px; background-color: #d0d0d0; margin: 12px; padding: 20px; box-sizing: border-box; display: inline-block;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
   0 -8px 8px rgba(0, 0, 0, 0.1),
   8px 0 8px rgba(0, 0, 0, 0.1),
   -8px 0 8px rgba(0, 0, 0, 0.1); border-radius: 15px;">
